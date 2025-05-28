@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,9 @@
           callback: function(t) {
             return t.card('due').get('due')
               .then(function(dueDate) {
-                if (!dueDate) return t.alert({ message: 'تاریخی تعیین نشده' });
+                if (!dueDate) {
+                  return t.alert({ message: 'تاریخی تعیین نشده' });
+                }
                 const date = new Date(dueDate);
                 const j = window.jalaali.toJalaali(date);
                 const jalaliDate = `${j.jy}/${j.jm}/${j.jd}`;
