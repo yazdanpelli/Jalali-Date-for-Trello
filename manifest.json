@@ -4,8 +4,7 @@
   "url": "https://pellican.github.io/trello-jalali/index.html",
   "capabilities": {
     "card-buttons": [{
-      "text": "📅 تاریخ شمسی",
-      "callback": "showJalaliDate"
+      "text": "📅 تاریخ شمسی"
     }]
   }
 }
