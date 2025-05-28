@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jalaali-js@1.1.0/dist/jalaali.min.js"></script>
+</head>
+<body>
+  <script>
+    const t = TrelloPowerUp.iframe();
+
+    window.TrelloPowerUp.initialize({
+      'card-buttons': function(t, options) {
+        return [{
+          icon: 'https://img.icons8.com/emoji/48/calendar-emoji.png',
+          text: '📅 تاریخ شمسی',
+          callback: function(t) {
+            return t.card('due').get('due')
+              .then(function(dueDate) {
+                if (!dueDate) return t.alert({ message: 'تاریخی تعیین نشده' });
+                const date = new Date(dueDate);
+                const j = window.jalaali.toJalaali(date);
+                const jalaliDate = `${j.jy}/${j.jm}/${j.jd}`;
+                return t.alert({ message: `تاریخ شمسی: ${jalaliDate}` });
+              });
+          }
+        }];
+      }
+    });
+  </script>
+</body>
+</html>
