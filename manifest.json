@@ -1,13 +1,11 @@
+
 {
-  "name": "Trello Jalali Date",
-  "url": "https://YOUR_HOST_URL/index.html",
+  "name": "Jalali Date Picker",
+  "url": "https://pellican.github.io/trello-jalali/index.html",
   "capabilities": {
     "card-buttons": [{
       "text": "📅 تاریخ شمسی",
       "callback": "showJalaliDate"
-    }],
-    "authorization-status": {
-      "enabled": false
-    }
+    }]
   }
 }
